@@ -1,0 +1,86 @@
+$baseColor: white;
+$outlineColor: #00965e;
+$hoverColor: #00965e;
+$disbledColor: rgb(233, 231, 229);
+
+:host {
+  display: block;
+  border: 1px solid $outlineColor;
+  margin: 0;
+  padding: 0;
+
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $hoverColor;
+  }
+}
+input {
+  border: none;
+  background-color: $baseColor;
+  outline: none;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  background-color: $baseColor;
+  outline: none;
+}
+
+button:hover {
+  color: $hoverColor;
+}
+
+.auto-container {
+  display: flex;
+}
+
+.result-item {
+  width: 100%;
+  background-color: $baseColor;
+  padding-left: 1%;
+  z-index: 100;
+  cursor: pointer;
+  border-top: 1px solid #00965f18;
+}
+
+.result-item:hover {
+  background-color: $hoverColor;
+}
+
+.auto-complete {
+  position: relative;
+  width: 100%;
+}
+
+.result-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.cmp-disabled {
+  background-color: $disbledColor;
+  cursor: not-allowed;
+}
+
+.invisible {
+  display: none;
+}

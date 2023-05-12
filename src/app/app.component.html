@@ -1,0 +1,20 @@
+<div>
+    <form>
+        <hr />
+        <p>Child:</p>
+        <app-auto-complete2 [(autoCompleteValue)]="customerCode" [isAutoFirstEnabled]="true"
+            (selectOption)="onCustomerSelect($event)" [isDisabled]="toggleChildDisabled"
+            (autoCompleteValueChange)="getChangedData($event)"></app-auto-complete2>
+        <hr />
+        <p>Search String showing in parent:{{customerCode}}</p>
+        <p>Below buttons are part of parent component, and they are pushing data directly to child compoent service.</p>
+        <input type="button" (click)="pushAll()" value="Push All">
+        <input type="button" (click)="pushMed()" value="Push Med">
+        <input type="button" (click)="pushSmall()" value="Push one">
+        <input type="button" (click)="toggleDisbled()" value="Toggle Disabled">
+    </form>
+    <hr />
+    <p>Start by searching "b.."</p>
+    <p>Search with "c" for a single record.</p>
+    <p>Emitted data => {{emittedData|json}}</p>
+</div>
